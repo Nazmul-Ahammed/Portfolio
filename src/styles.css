@@ -1,0 +1,32 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* Add spacing between sections */
+.introduction {
+    position: relative;
+    top: 100px; /* Adjust the value to control the gap */
+  }
+.about {
+    position: relative;
+    top: 50px; /* Adjust the value to control the gap */
+  }
+  
+  .project {
+    position: relative;
+    top: 200px; /* Adjust the value to control the gap */
+  }
+  
+  .contact {
+    position: relative;
+    top: 200px; /* Adjust the value to control the gap */
+  }
+  @media (max-width: 768px) {
+    /* Add your responsive styles here */
+    /* For example, you can change the flex direction or adjust padding */
+    .contact {
+      flex-direction: column;
+    }
+  }
+  
+  
+  

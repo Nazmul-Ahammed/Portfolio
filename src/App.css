@@ -1,0 +1,7 @@
+/* Add padding to sections and space for the fixed header */
+.about,
+.projects,
+.contact {
+  padding: 80px 0;
+  margin: 0;
+}
