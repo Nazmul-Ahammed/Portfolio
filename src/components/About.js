@@ -59,7 +59,7 @@ function About() {
         >
           About Me
         </h1>
-        <div style={{...aboutTextStyle,width: '100%',paddingBottom:'189px',textAlign: 'justify',marginTop:'50px',marginLeft:'65px',paddingRight:'145px'}} >
+        <div style={{...aboutTextStyle,paddingBottom:'189px',textAlign: 'justify',marginTop:'50px',marginLeft:'65px',paddingRight:'145px'}} >
         
 
         I am a Computer Science graduate with a deep-seated passion for technology and a keen problem-solving mindset. Armed with a robust 

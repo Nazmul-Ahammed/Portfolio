@@ -7,12 +7,13 @@ function Header() {
 
   const TextStyle = {
     color: 'Cyan', // Set the text color to white
+
   };
 
   // Function to handle the file download
   const handleDownload = () => {
     // Replace 'your-file-path.pdf' with the actual path to your file
-    const filePath = 'https://drive.google.com/file/d/1aWsXvueqcVT-v-uFQb6lftOHOPtggxlm/view?usp=drive_link';
+    const filePath = 'https://drive.google.com/file/d/11SDoBucNOF_sAwtCE6PR8sof85eAZ1vT/view?usp=sharing';
 
     // Create an anchor element
     const link = document.createElement('a');
@@ -28,11 +29,11 @@ function Header() {
   return (
     <header
       style={TextStyle}
-      className="bg-gray-800 p-6 text-white fixed top-0 w-full z-50"
+      className="bg-gray-800 p-6 text-white fixed top-0 w-full z-50 px-[220px]"
     >
       <nav className="flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          <img src={logo} alt="Your Logo" className="w-30 h-12" />
+          <img src={logo} alt="Your Logo" className="w-30 h-12 rounded-2xl" />
         </div>
         <div
           style={TextStyle}

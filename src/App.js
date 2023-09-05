@@ -60,13 +60,16 @@ function App() {
       {!showAnimation && (
         // Show the main website content if showAnimation is false
         <>
-          <Header />
+        <div className='p-0 m-0'>
+          <Header  />
           <main className="relative">
+            
             <Introduction id="introduction" />
             <About id="about" />
             <Project id="project" />
             <Contact id="contact" />
           </main>
+          </div>
         </>
       )}
     </div>
