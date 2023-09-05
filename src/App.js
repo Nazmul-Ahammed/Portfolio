@@ -7,8 +7,17 @@ import Contact from './components/Contact';
 import Introduction from './components/Introduction';
 import Lottie from 'lottie-react';
 import lottie from './nazmul.json'; // Replace with your animation JSON file
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duration in milliseconds
+    });
+  }, []);
+
   const TextStyle = {
     color: '#da8080',
   };

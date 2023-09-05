@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import book from './Picture/book.jpg';
+import nazmul from './Picture/logo.png';
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 
 function Project() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duration of the animation (in milliseconds)
+      // Add more AOS options as needed
+    });
+  }, []);
+
   const projectTextStyle = {
-    color: '#da8080',
+    color: 'rgb(133 236 158)',
   };
 
   const projectContainerStyle = {
@@ -27,20 +39,21 @@ function Project() {
     textAlign: 'center',
     borderRadius: '8px',
     position: 'relative',
-    transition: 'transform 0.0s ease-in-out',
+    
   };
 
   const logoStyle = {
     width: '80px',
     height: '80px',
     borderRadius: '50%',
-    background: 'url("/Picture/nazmul.jpg")',
-    backgroundSize: 'cover',
+    // Remove the background property or set it to transparent
+    background: 'transparent', // or background: 'none'
     margin: '0 auto',
     border: '2px solid #fff',
     position: 'relative',
     top: '-55px',
   };
+  
 
   const projectNameStyle = {
     fontSize: '1.5rem',
@@ -54,22 +67,51 @@ function Project() {
     textAlign: 'center',
   };
 
-  const onProjectBoxHover = (event) => {
-    event.target.style.transform = 'scale(1.08)';
-  };
 
-  const onProjectBoxLeave = (event) => {
-    event.target.style.transform = 'scale(1)';
-  };
-  const buttonStyle = {
-    backgroundColor: '#007acc',
+
+  const buttonStyle1 = {
+    backgroundColor: 'rgb(77 173 238)',
     color: '#fff',
     border: 'none',
     padding: '10px 20px',
     cursor: 'pointer',
+    position:'relative',
     transition: 'background-color 0.3s ease',
     marginTop:'50px',
-    top: '155px',
+    top: '40px',
+  };
+  const buttonStyle2 = {
+    backgroundColor: 'rgb(77 173 238)',
+    color: '#fff',
+    border: 'none',
+    padding: '10px 20px',
+    cursor: 'pointer',
+    position:'relative',
+    transition: 'background-color 0.3s ease',
+    marginTop:'50px',
+    top: '150px',
+  };
+  const buttonStyle3 = {
+    backgroundColor: 'rgb(77 173 238)',
+    color: '#fff',
+    border: 'none',
+    padding: '10px 20px',
+    cursor: 'pointer',
+    position:'relative',
+    transition: 'background-color 0.3s ease',
+    marginTop:'50px',
+    top: '100px',
+  };
+  const buttonStyle4 = {
+    backgroundColor: 'rgb(77 173 238)',
+    color: '#fff',
+    border: 'none',
+    padding: '10px 20px',
+    cursor: 'pointer',
+    position:'relative',
+    transition: 'background-color 0.3s ease',
+    marginTop:'50px',
+    top: '40px',
   };
 
   return (
@@ -79,56 +121,79 @@ function Project() {
         <div
           style={projectBoxStyle}
           className="project-box" // Add the project-box class
-          onMouseEnter={onProjectBoxHover}
-          onMouseLeave={onProjectBoxLeave}
-        >
-          <div style={logoStyle}><img src={book} alt="book"  /></div>
-          <h3 style={projectNameStyle}>Book Resell Portal</h3>
-          <p>A Backend project using ASP .NET MVC. Used 3-tire Architechture.
-             Also followed SOLID principal. For databse MSSQL was used. 
-             Managed database operations using Entity Framework.</p>
-          <div className="project-footer">Footer of Project 1</div>
-          <button style={buttonStyle} >
-          <a href="#" className="project-link-button">Link</a>
+          data-aos="zoom-in-right"
+     >
+        
+          <div style={logoStyle} className="project-logo">
+  <img src={nazmul} alt="book" style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
+</div>
+
+          <h3 style={projectNameStyle}>Portfolio</h3>
+          <p>The Portfolio Website, developed by React, is a showcase of my skills and accomplishments. It serves as an interactive and visually 
+            engaging platform to display my projects, achievements, and personal information. With a modern and responsive design, this website 
+            allows visitors to explore my work and get to know me better, making it an effective tool for presenting my professional identity and 
+            creative endeavors. See this portfolio Websites Code! Checkout My github.</p>
+          <div className="project-footer"></div>
+          <button  style={buttonStyle1} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'   >
+          <a href="https://github.com/Nazmul-Ahammed/Portfolio.git" className="project-link-button">View in Github</a>
           </button>
         </div>
 
         <div
           style={projectBoxStyle}
           className="project-box" // Add the project-box class
-          onMouseEnter={onProjectBoxHover}
-          onMouseLeave={onProjectBoxLeave}
+          data-aos="zoom-in"
         >
-          <div style={logoStyle}><img src={book} alt="book"  /></div>
-          <h3 style={projectNameStyle}>Project 2</h3>
-          <p>Description of Project 2</p>
-          <a href="#" className="project-link-button">Link</a>
-          <div className="project-footer">Footer of Project 2</div>
+          <div style={logoStyle} className="project-logo">
+  <img src={book} alt="book" style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
+</div>
+
+          <h3 style={projectNameStyle}>Book Resell Portal</h3>
+          <p>A Backend project using ASP .NET MVC. Used 3-tire Architechture.
+             Also followed SOLID principal. For databse MSSQL was used. 
+             Managed database operations using Entity Framework.</p>
+          <div className="project-footer"></div>
+          <button  style={buttonStyle2} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'   >
+          <a href="https://github.com/Nazmul-Ahammed/Book-Resell-Portal-.git" className="project-link-button">View in Github</a>
+          </button>
         </div>
         <div
           style={projectBoxStyle}
           className="project-box" // Add the project-box class
-          onMouseEnter={onProjectBoxHover}
-          onMouseLeave={onProjectBoxLeave}
+          data-aos="zoom-in-left"
         >
-          <div style={logoStyle}></div>
-          <h3 style={projectNameStyle}>Project 3</h3>
-          <p>Description of Project 3</p>
-          <a href="#" className="project-link-button">Link</a>
-          <div className="project-footer">Footer of Project 3</div>
+          <div style={logoStyle} className="project-logo">
+  <img src={book} alt="book" style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
+</div>
+
+          <h3 style={projectNameStyle}>Service Provider</h3>
+          <p>This is a website where various day to day service can be ordered. used next js in the frontend and nestjs in the backend. 
+            Designing using Tailwind CSS. Fetching data using axios. Validating data using pipes in nextjs. Making database using PostgreSQL. 
+            Managing database operations using TypeORM.</p>
+          <div className="project-footer"></div>
+          <button  style={buttonStyle3} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'   >
+          <a href="#" className="project-link-button">View in Github</a>
+          </button>
         </div>
 
         <div
           style={projectBoxStyle}
           className="project-box" // Add the project-box class
-          onMouseEnter={onProjectBoxHover}
-          onMouseLeave={onProjectBoxLeave}
+          data-aos="zoom-in-up"
         >
-          <div style={logoStyle}></div>
-          <h3 style={projectNameStyle}>Project 4</h3>
-          <p>Description of Project 4</p>
-          <a href="#" className="project-link-button">Link</a>
-          <div className="project-footer">Footer of Project 4</div>
+          <div style={logoStyle} className="project-logo">
+  <img src={book} alt="book" style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
+</div>
+
+          <h3 style={projectNameStyle}>Book Resell Portal(React,Tailwind CSS)</h3>
+          <p>The Book Resell Portal is a dynamic web application built using React and Tailwind CSS. It provides a user-friendly platform for 
+            individuals to buy and sell pre-owned books effortlessly. With an intuitive interface and responsive design, users can list their 
+            books for sale, browse available titles, and make secure transactions, creating a seamless and efficient marketplace for book 
+            enthusiasts.</p>
+          <div className="project-footer"></div>
+          <button  style={buttonStyle4} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'   >
+          <a href="https://github.com/Nazmul-Ahammed/reactproject.git" className="project-link-button">View in Github</a>
+          </button>
         </div>
         
 
@@ -138,10 +203,21 @@ function Project() {
       {/* Responsive Styles for Small Devices */}
       <style>
         {`
+
+
+          .project-box .project-link-button {
+            display: none;
+          }
+
+          .project-box:hover .project-link-button {
+            display: block;
+          }
+
+
           @media (max-width: 768px) {
             .project-box {
               width: 100% !important; /* Make each project box full width */
-              margin: 20px 0 !important; /* Add vertical spacing between project boxes */
+              margin: 40px 0 !important; /* Add vertical spacing between project boxes */
             }
           }
         `}

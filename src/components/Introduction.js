@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Lottie from 'lottie-react';
 import lottie from './Picture/nazmul.json'; // Replace with your animation JSON file
 import './Introduction.css'; // Import the CSS file
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 
 function Introduction() {
+
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duration of the animation (in milliseconds)
+      // Add more AOS options as needed
+    });
+  }, []);
+
   const aboutTextStyle = {
     textAlign: 'left',
     color: 'rgb(133 236 158)', // Set the text color to Cyan
@@ -20,9 +32,9 @@ function Introduction() {
 
   return (
     <section className="introduction relative bg-gray-700">
-      <div className="first-portion-intro">
+      <div className="first-portion-intro" data-aos="flip-right">
         <div className="first-portion-div">
-          <p style={aboutTextStyle}>Hi, I am</p>
+          <p style={aboutTextStyle}>Hello, I am</p>
           <h1 id="about-h1" style={{ ...aboutTextStyle, ...h1Style }}>
             Nazmul Ahammed
           </h1>
@@ -37,7 +49,7 @@ function Introduction() {
           </p>
         </div>
       </div>
-      <div className="second-portion-intro">
+      <div className="second-portion-intro" data-aos="flip-left" >
         {showAnimation && (
           // Show the Lottie animation component if showAnimation is true
           <div className="animation-container1">

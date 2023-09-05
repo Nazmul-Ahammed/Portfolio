@@ -1,6 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 
 function Contact() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duration of the animation (in milliseconds)
+      // Add more AOS options as needed
+    });
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -70,9 +82,9 @@ function Contact() {
   };
 
   const buttonStyle = {
-    backgroundColor: '#007acc',
+    backgroundColor: 'rgb(77 173 238)',
     color: '#fff',
-    border: 'none',
+    borderRadius: '10px',
     padding: '10px 20px',
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
@@ -99,18 +111,20 @@ function Contact() {
 
   return (
     <section style={containerStyle} className="contact Cyan bg-gray-700">
-      <div style={columnStyle}>
+      <div style={columnStyle} data-aos="fade-right">
         <div style={contentStyle}>
           <h2 style={contentStyleHead}>Contact Me</h2>
           <p>Email: nazmul.ahammed.nz@gmail.com</p>
-          <p>LinkedIn: https://www.linkedin.com/in/nazmul-ahammed-337b881a9/</p>
-          <p>GitHub: https://github.com/Nazmul-Ahammed</p>
+          <p>LinkedIn:<a href='https://www.linkedin.com/in/nazmul-ahammed-337b881a9/'> https://www.linkedin.com/in/nazmul-ahammed-337b881a9/</a></p>
+          <p>GitHub: <a href='https://github.com/Nazmul-Ahammed'> https://github.com/Nazmul-Ahammed </a></p>
         </div>
       </div>
 
       <div style={dividerStyle}></div>
 
-      <div style={columnStyle}>
+      <div style={columnStyle} data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" >
         <div style={formStyle}>
           <h3 style={contentStyleHead}>Send a Message</h3>
           <form onSubmit={handleSubmit}>
